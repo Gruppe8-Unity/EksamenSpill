@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 public class PlayerOne : Player
 {
     public Rigidbody2D body;
-   
+    public PlayerWeaponManager weaponManager;
+
     Vector2 moveDirection = Vector2.zero;
 
     void FixedUpdate()
@@ -17,6 +18,14 @@ public class PlayerOne : Player
     {
         moveDirection = context.ReadValue<Vector2>();
 
+    }
+
+    public void Shoot(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            weaponManager.Fire();
+        }
     }
 
 }
