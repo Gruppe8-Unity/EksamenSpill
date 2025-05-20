@@ -4,5 +4,9 @@ public abstract class Weapon : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform firePosition;
-    public float speed = 0;
+
+    public void Fire()
+    {
+        GameObject newBullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.identity);
+    }
 }
