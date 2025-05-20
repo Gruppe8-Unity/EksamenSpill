@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "1944LoopClone.sln"
+    "dotnet.defaultSolution": "EksamenSpill.sln"
 }
