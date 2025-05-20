@@ -1,14 +1,11 @@
-using System;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Rendering.UI;
 
 public abstract class Enemy : MonoBehaviour
 {
-    public float moveSpeed = 0;
-    public float health = 0;
+    public float moveSpeed = 0f;
+    public float health = 0f;
 
-    public void TakeDamage(float amount)
+    public virtual void TakeDamage(float amount)
     {
         health -= amount;
 
@@ -18,4 +15,17 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+            if (bullet != null)
+            {
+                TakeDamage(bullet.damage);
+                UIScript.Instance.UpdateScore(100);
+                Debug.Log("Health left: " + health);
+            }
+        }
+    }
 }

@@ -8,12 +8,7 @@ public class BaseWeapon : Weapon
     {
         if (context.performed)
         {
-            InstantiateBullet();
+            Fire();
         }
-    }
-
-    private void InstantiateBullet()
-    {
-        GameObject newBullet = Instantiate(bulletPrefab, firePosition.position, Quaternion.identity);
     }
 }
