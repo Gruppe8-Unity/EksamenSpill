@@ -19,11 +19,4 @@ public class PlayerOne : Player
 
     }
 
-    public void Shoot(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            Debug.Log("FIRED!");
-        }
-    }
 }

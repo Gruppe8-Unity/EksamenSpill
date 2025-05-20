@@ -12,6 +12,11 @@ public class Player : MonoBehaviour
         health = CREDIT;
     }
 
+    void Start()
+    {
+        UIScript.Instance.UpdateHealth(health);
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Bullet"))
