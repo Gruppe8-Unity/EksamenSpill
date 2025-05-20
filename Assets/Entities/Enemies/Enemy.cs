@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering.UI;
 
 public abstract class Enemy : MonoBehaviour
-{   
+{
     public float moveSpeed = 0;
     public float health = 0;
 
@@ -17,4 +17,5 @@ public abstract class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }
