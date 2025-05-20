@@ -1,11 +1,12 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerOne : Player
+public class PlayerOne : MonoBehaviour
 {
     public Rigidbody2D body;
-   
+    public float moveSpeed = 0;
+
+    public float health = 0;
     Vector2 moveDirection = Vector2.zero;
 
     void FixedUpdate()
@@ -24,6 +25,24 @@ public class PlayerOne : Player
         if (context.performed)
         {
             Debug.Log("FIRED!");
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage();
+            Debug.Log("PLAYER HEALTH: " + health);
+        }
+    }
+
+    public void TakeDamage()
+    {
+        health -= 1;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
