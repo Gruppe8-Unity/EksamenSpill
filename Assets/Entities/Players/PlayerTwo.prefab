@@ -177,7 +177,7 @@ MonoBehaviour:
   moveSpeed: 10
   healthText: {fileID: 0}
   animator: {fileID: 2875318580510362587}
-  animationTimer: 10
+  animationTimer: 13.5
   hitSound: {fileID: 8300000, guid: 264f18c69437c0c4288b3e9f007a9351, type: 3}
   body: {fileID: 4002060436287541074}
   weaponManager: {fileID: 3311359541820420038}
