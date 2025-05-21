@@ -3,9 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public Player player;
+    public Player playerOne;
+    public Player playerTwo;
     public UIScript uiScript;
-    public PlayerWeaponManager weaponManager;
+    public PlayerWeaponManager playerOneWeapon;
+    public PlayerWeaponManager playerTwoWeapon;
     public EnemySpawnerScript enemySpawner;
     public GameObject gameOverScreen;
 
@@ -20,21 +22,22 @@ public class GameController : MonoBehaviour
     {
         int score = uiScript.GetScore();
 
-        if (!isGameOver && player.health <= 0)
+        if (!isGameOver && (playerOne.health <= 0 && playerTwo.health <= 0))
         {
             GameOverEnable();
         }
 
         if (currentUpgrade < upgradeLimits.Length && score >= upgradeLimits[currentUpgrade])
         {
-            weaponManager.UpgradeWeapon();
+            playerOneWeapon.UpgradeWeapon();
+            playerTwoWeapon.UpgradeWeapon();    
             currentUpgrade++;
         }
 
         if (score > levelGap && !newLevel)
         {
-            enemySpawner.cooldown = Mathf.Max(0.1f, enemySpawner.cooldown - 0.7f);
-            enemySpawner.bossSpawnerTimer = Mathf.Max(2f, enemySpawner.bossSpawnerTimer - 8f);
+            enemySpawner.cooldown = Mathf.Max(0.1f, enemySpawner.cooldown - 0.75f);
+            enemySpawner.bossSpawnerTimer = Mathf.Max(2f, enemySpawner.bossSpawnerTimer - 9f);
             newLevel = true;
         }
 

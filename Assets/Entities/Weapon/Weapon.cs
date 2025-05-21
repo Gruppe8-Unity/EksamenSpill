@@ -20,6 +20,7 @@ public abstract class Weapon : MonoBehaviour
         {
             bullet.speed = bulletSpeed;
             bullet.damage = damage;
+            bullet.ownerTag = "Player";
         }
     }
 }

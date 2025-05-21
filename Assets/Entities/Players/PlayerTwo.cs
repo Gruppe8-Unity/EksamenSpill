@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerOne : Player
+public class PlayerTwo : Player
 {
     public Rigidbody2D body;
     public PlayerWeaponManager weaponManager;
@@ -13,7 +13,7 @@ public class PlayerOne : Player
     {
         if (healthText != null)
         {
-            healthText.text = "P1: " + health;
+            healthText.text = "P2: " + health;
         }
     }
 

@@ -23,7 +23,10 @@ public abstract class Enemy : MonoBehaviour
             if (bullet != null)
             {
                 TakeDamage(bullet.damage);
-                UIScript.Instance.UpdateScore(100);
+                if (UIScript.Instance != null)
+                {
+                    UIScript.Instance.UpdateScore(100);
+                }
                 Debug.Log("Health left: " + health);
             }
         }

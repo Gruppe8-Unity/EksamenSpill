@@ -47,5 +47,11 @@ public class EnemyBoss : Enemy
     void Fire()
     {
         GameObject bullet = Instantiate(bulletPrefab, crossfire.position, crossfire.rotation);
+        Bullet bulletComponent = bullet.GetComponent<Bullet>();
+
+        if (bulletComponent != null)
+        {
+            bulletComponent.ownerTag = "Enemy";
+        }
     }
 }
