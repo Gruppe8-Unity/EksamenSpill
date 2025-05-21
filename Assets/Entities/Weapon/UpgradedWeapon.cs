@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 public class UpgradedWeapon : Weapon
 {
     public float offset = 0.4f;
+        //Lyd
+    public AudioSource sfxSource;
+    public AudioClip fireSound;
 
     public override void Fire()
     {
@@ -13,5 +16,10 @@ public class UpgradedWeapon : Weapon
 
         SpawnBullet(left, firePosition.rotation);
         SpawnBullet(right, firePosition.rotation);
+        //Lyd
+        if (sfxSource != null && fireSound != null)
+        {
+            sfxSource.PlayOneShot(fireSound); 
+        }
     }
 }

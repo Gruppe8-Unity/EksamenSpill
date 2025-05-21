@@ -140,6 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   health: 1
+  hitSound: {fileID: 8300000, guid: ea6f7b78fe9e6ee4e91080c3bb0870d7, type: 3}
 --- !u!50 &-8202596446296060525
 Rigidbody2D:
   serializedVersion: 5

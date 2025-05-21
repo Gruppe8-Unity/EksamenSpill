@@ -51,11 +51,15 @@ MonoBehaviour:
   maxSize: 7
   spawnInterval: 0.5
   scrollSpeed: 5
-  timeToChangeLevel: 2
+  timeToChangeLevel: 12
   levels:
   - islandTile: {fileID: 11400000, guid: 5c64d6464ff95af4ab4f9cf9ea816cde, type: 2}
     oceanTile: {fileID: 11400000, guid: 390f52e29c754154baa36201a4eeeeda, type: 2}
+    music: {fileID: 8300000, guid: 0bc5e103ac20e33449915e0c792873fc, type: 3}
   - islandTile: {fileID: 11400000, guid: b6901563d6c9ff54598bd6cb033db924, type: 2}
     oceanTile: {fileID: 11400000, guid: 65ba0cb1b5dae0b42ba191b6f7152015, type: 2}
+    music: {fileID: 8300000, guid: 0bf191f2ca79f4f4c9a40c50221d6572, type: 3}
   - islandTile: {fileID: 11400000, guid: 8e5e78f4cc56c4245b249bff3352db92, type: 2}
     oceanTile: {fileID: 11400000, guid: 0053b4d042c4d0d4b96af30b36664cac, type: 2}
+    music: {fileID: 8300000, guid: f73a2956a007be546a51c0185197734d, type: 3}
+  musicSource: {fileID: 0}

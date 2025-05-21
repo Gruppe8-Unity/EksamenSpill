@@ -4,6 +4,9 @@ public class AdvancedUpgradedWeapon : Weapon
 {
     public float offset = 0.2f;
     public float moreOffset = 1.5f;
+        //Lyd
+    public AudioSource sfxSource;
+    public AudioClip fireSound;
 
 
     public override void Fire()
@@ -17,5 +20,10 @@ public class AdvancedUpgradedWeapon : Weapon
         SpawnBullet(middle_left, firePosition.rotation);
         SpawnBullet(middle_right, firePosition.rotation);
         SpawnBullet(right, firePosition.rotation);
+        //Lyd
+        if (sfxSource != null && fireSound != null)
+        {
+            sfxSource.PlayOneShot(fireSound); 
+        }
     }
 }

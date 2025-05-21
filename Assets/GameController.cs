@@ -18,6 +18,11 @@ public class GameController : MonoBehaviour
     private bool isGameOver = false;
     private bool newLevel = false;
 
+    //musikk for game over
+    public AudioSource sfxSource;
+    public AudioClip gameOverSound;
+
+
     private void Update()
     {
         int score = uiScript.GetScore();
@@ -30,7 +35,7 @@ public class GameController : MonoBehaviour
         if (currentUpgrade < upgradeLimits.Length && score >= upgradeLimits[currentUpgrade])
         {
             playerOneWeapon.UpgradeWeapon();
-            playerTwoWeapon.UpgradeWeapon();    
+            playerTwoWeapon.UpgradeWeapon();
             currentUpgrade++;
         }
 
@@ -48,6 +53,10 @@ public class GameController : MonoBehaviour
         gameOverScreen.SetActive(true);
         isGameOver = true;
         Time.timeScale = 0f;
+        if (sfxSource != null && gameOverSound != null) //Game over lyd
+        {
+            sfxSource.PlayOneShot(gameOverSound);
+        }
     }
 
     public void RestartGame()

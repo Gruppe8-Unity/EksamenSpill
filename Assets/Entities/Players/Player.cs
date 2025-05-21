@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     private float screenWidth;
     private float screenHeight;
     private float timer;
-    
+    public AudioClip hitSound;
 
     void Awake()
     {
@@ -79,6 +79,16 @@ public class Player : MonoBehaviour
 
     public void TakeDamage()
     {
+        //Lyd
+        GameObject sfxPlayer = GameObject.Find("SFXPlayer");
+        if (sfxPlayer != null && hitSound != null)
+        {
+            AudioSource sfx = sfxPlayer.GetComponent<AudioSource>();
+            if (sfx != null)
+            
+                sfx.PlayOneShot(hitSound);
+            }
+
         health -= 1;
         if (healthText != null)
         {

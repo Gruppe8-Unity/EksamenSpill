@@ -7,9 +7,12 @@ public abstract class Weapon : MonoBehaviour
     public float bulletSpeed = 10f;
     public float damage = 1f;
 
+
+
     public virtual void Fire()
     {
         SpawnBullet(firePosition.position, firePosition.rotation);
+
     }
 
     protected void SpawnBullet(Vector3 position, Quaternion rotation)

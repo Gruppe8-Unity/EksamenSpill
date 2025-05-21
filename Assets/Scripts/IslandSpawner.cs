@@ -25,9 +25,13 @@ public class IslandSpawner : MonoBehaviour
     {
         public RuleTile islandTile;
         public TileBase oceanTile;
+        public AudioClip music;
     }
     public List<LevelTheme> levels = new List<LevelTheme>();
     private int currentLevel = 0;
+
+    //musikk for nivåene
+    public AudioSource musicSource;
 
 
 
@@ -40,6 +44,7 @@ public class IslandSpawner : MonoBehaviour
     void Start()
     {
         mainCam = Camera.main;
+
     }
 
     // Update is called once per frame
@@ -127,6 +132,14 @@ public class IslandSpawner : MonoBehaviour
 
         var theme = levels[currentLevel];
 
+        //Musikk for nivåene
+        if (musicSource != null && theme.music != null)
+        {
+            musicSource.Stop();
+            musicSource.clip = theme.music;
+            musicSource.loop = true;
+            musicSource.Play();
+        }
         Debug.Log($"Endrer til nivå:{currentLevel + 1}");
 
         // Ny tiles til fremtidige øyer
