@@ -194,8 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponLevels:
-  - {fileID: 2100521049}
   - {fileID: 1163444869}
+  - {fileID: 2100521049}
 --- !u!114 &1163444869 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1911159682326279997, guid: 0425407b0c7835f43952459d1d5e03ee, type: 3}
@@ -681,6 +681,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 380120547334258878, guid: 11c01d693e4fd9c42bc7ea20e099ee2a, type: 3}
+      propertyPath: bossSpawnerTimer
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1622885170564988799, guid: 11c01d693e4fd9c42bc7ea20e099ee2a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.01
