@@ -19,7 +19,10 @@ public class PlayerWeaponManager : MonoBehaviour
     {
         if (currentLevel < weaponLevels.Length - 1)
         {
-            weaponLevels[currentLevel].gameObject.SetActive(false);
+            if (weaponLevels[currentLevel] != null)
+            {
+                weaponLevels[currentLevel].gameObject.SetActive(false);
+            }
             currentLevel++;
             ActivateWeapon(currentLevel);
             Debug.Log("Weapon upgraded to level " + currentLevel);
