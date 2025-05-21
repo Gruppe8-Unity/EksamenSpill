@@ -58,4 +58,4 @@ MonoBehaviour:
   - islandTile: {fileID: 11400000, guid: b6901563d6c9ff54598bd6cb033db924, type: 2}
     oceanTile: {fileID: 11400000, guid: 65ba0cb1b5dae0b42ba191b6f7152015, type: 2}
   - islandTile: {fileID: 11400000, guid: 8e5e78f4cc56c4245b249bff3352db92, type: 2}
-    oceanTile: {fileID: 11400000, guid: d939410ac8df2c343a47ba596279b0e6, type: 2}
+    oceanTile: {fileID: 11400000, guid: 0053b4d042c4d0d4b96af30b36664cac, type: 2}
