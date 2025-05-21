@@ -22,6 +22,6 @@ public class MainMenu : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene("MenuScene");
+        tutorialScene.SetActive(false);
     }
 }
