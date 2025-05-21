@@ -13,7 +13,7 @@ public class EnemySpawnerScript : MonoBehaviour
 
     private float enemyTimer;
     private float bossTimer;
-
+    
     void Start()
     {
         enemyTimer = cooldown;

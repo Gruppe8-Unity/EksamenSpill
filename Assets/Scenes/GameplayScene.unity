@@ -176,6 +176,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc51aaa88e536074b8a923478fde4278, type: 3}
+--- !u!114 &148146990 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 380120547334258878, guid: 11c01d693e4fd9c42bc7ea20e099ee2a, type: 3}
+  m_PrefabInstance: {fileID: 7166028609555749650}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b9341010c623647805117be65cad6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &348391488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5958483654816113545, guid: 050ca34a608f73b42a2ff91b489557a2, type: 3}
@@ -766,6 +777,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1537421863}
     - target: {fileID: 5815661704177032921, guid: d1164d0cba0e6bb489dfcf6acd5daebe, type: 3}
+      propertyPath: enemySpawner
+      value: 
+      objectReference: {fileID: 148146990}
+    - target: {fileID: 5815661704177032921, guid: d1164d0cba0e6bb489dfcf6acd5daebe, type: 3}
       propertyPath: weaponManager
       value: 
       objectReference: {fileID: 484252775}
@@ -1007,6 +1022,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 380120547334258878, guid: 11c01d693e4fd9c42bc7ea20e099ee2a, type: 3}
+      propertyPath: cooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 380120547334258878, guid: 11c01d693e4fd9c42bc7ea20e099ee2a, type: 3}
+      propertyPath: bossSpawnerTimer
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1622885170564988799, guid: 11c01d693e4fd9c42bc7ea20e099ee2a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.01

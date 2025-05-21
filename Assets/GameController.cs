@@ -6,12 +6,15 @@ public class GameController : MonoBehaviour
     public Player player;
     public UIScript uiScript;
     public PlayerWeaponManager weaponManager;
+    public EnemySpawnerScript enemySpawner;
     public GameObject gameOverScreen;
 
     public int[] upgradeLimits;
 
     private int currentUpgrade = 0;
+    private int levelGap = 5000;
     private bool isGameOver = false;
+    private bool newLevel = false;
 
     private void Update()
     {
@@ -26,6 +29,13 @@ public class GameController : MonoBehaviour
         {
             weaponManager.UpgradeWeapon();
             currentUpgrade++;
+        }
+
+        if (score > levelGap && !newLevel)
+        {
+            enemySpawner.cooldown = Mathf.Max(0.1f, enemySpawner.cooldown - 0.7f);
+            enemySpawner.bossSpawnerTimer = Mathf.Max(2f, enemySpawner.bossSpawnerTimer - 8f);
+            newLevel = true;
         }
 
     }
