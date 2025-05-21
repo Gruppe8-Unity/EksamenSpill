@@ -49,8 +49,8 @@ public class Player : MonoBehaviour
     public void RestrictPosition(Rigidbody2D body)
     {
         Vector2 pos = body.position;
-        pos.x = Mathf.Clamp(pos.x, 0, Screen.width);
-        pos.y = Mathf.Clamp(pos.y, 0, Screen.height);
+        pos.x = Mathf.Clamp(pos.x, -10f, 10f);
+        pos.y = Mathf.Clamp(pos.y, -5f, 5f);
         body.MovePosition(pos);   
     }
 }
