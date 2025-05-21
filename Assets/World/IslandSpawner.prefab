@@ -45,8 +45,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandTilemap: {fileID: 0}
+  oceanTilemap: {fileID: 0}
   islandTile: {fileID: 11400000, guid: 5c64d6464ff95af4ab4f9cf9ea816cde, type: 2}
-  minSize: 2
+  minSize: 3
   maxSize: 7
   spawnInterval: 0.5
   scrollSpeed: 5
+  timeToChangeLevel: 15
+  levels:
+  - islandTile: {fileID: 11400000, guid: 5c64d6464ff95af4ab4f9cf9ea816cde, type: 2}
+    oceanTile: {fileID: 11400000, guid: 390f52e29c754154baa36201a4eeeeda, type: 2}
+  - islandTile: {fileID: 11400000, guid: b6901563d6c9ff54598bd6cb033db924, type: 2}
+    oceanTile: {fileID: 11400000, guid: 65ba0cb1b5dae0b42ba191b6f7152015, type: 2}
+  - islandTile: {fileID: 11400000, guid: 8e5e78f4cc56c4245b249bff3352db92, type: 2}
+    oceanTile: {fileID: 11400000, guid: d939410ac8df2c343a47ba596279b0e6, type: 2}
