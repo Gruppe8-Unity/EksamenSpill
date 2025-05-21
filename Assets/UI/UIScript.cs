@@ -30,4 +30,9 @@ public class UIScript : MonoBehaviour
         score += amount;
         scoreText.text = "SCORE: " + score;
     }
+
+    public int GetScore()
+    {
+        return score;
+    }
 }

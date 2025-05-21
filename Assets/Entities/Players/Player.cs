@@ -7,14 +7,25 @@ public class Player : MonoBehaviour
     public float health = 0f;
     public float moveSpeed = 0f;
 
+    private float screenWidth;
+    private float screenHeight;
+
     void Awake()
     {
         health = CREDIT;
+        float verticalSize = Camera.main.orthographicSize * 2f;
+        screenHeight = verticalSize;
+        screenWidth = verticalSize * Camera.main.aspect;
     }
 
     void Start()
     {
         UIScript.Instance.UpdateHealth(health);
+    }
+
+    void Update()
+    {
+        WrapPlayerAroundScreen();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -46,11 +57,29 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void RestrictPosition(Rigidbody2D body)
+    public float GetHealth()
     {
-        Vector2 pos = body.position;
-        pos.x = Mathf.Clamp(pos.x, -10f, 10f);
-        pos.y = Mathf.Clamp(pos.y, -5f, 5f);
-        body.MovePosition(pos);   
+        return health;
+    }
+
+    public void WrapPlayerAroundScreen()
+    {
+        Vector3 position = transform.position;
+
+        float halfWidth = screenWidth / 2f;
+        float halfHeight = screenHeight / 2f;
+
+        if (position.x < -halfWidth)
+            position.x = halfWidth;
+        else if (position.x > halfWidth)
+            position.x = -halfWidth;
+
+        if (position.y < -halfHeight)
+            position.y = halfHeight;
+        else if (position.y > halfHeight)
+            position.y = -halfHeight;
+
+        transform.position = position;
+
     }
 }

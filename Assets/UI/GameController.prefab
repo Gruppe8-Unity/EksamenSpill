@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d37c9fc099f0394f9e4324f5a1049e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  uiScript: {fileID: 0}
+  weaponManager: {fileID: 0}
+  upgradeLimits: d007000088130000

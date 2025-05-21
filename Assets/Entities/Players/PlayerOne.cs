@@ -11,8 +11,7 @@ public class PlayerOne : Player
 
     void FixedUpdate()
     {
-        RestrictPosition(body);
-
+        //RestrictPosition(body);
         body.linearVelocity = moveDirection * moveSpeed;
     }
 
