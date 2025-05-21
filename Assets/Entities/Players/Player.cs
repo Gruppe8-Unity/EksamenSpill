@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,9 +11,13 @@ public class Player : MonoBehaviour
     public float health = 0f;
     public float moveSpeed = 0f;
     public TMP_Text healthText;
+    public Animator animator;
+    public float animationTimer;
 
     private float screenWidth;
     private float screenHeight;
+    private float timer;
+    
 
     void Awake()
     {
@@ -24,7 +29,18 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        timer -= Time.deltaTime;
+
+        if (timer < 0)
+        {
+            timer = animationTimer;
+            animator.SetTrigger("PlayAnim");
+        }
+
+
         WrapPlayerAroundScreen();
+
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)

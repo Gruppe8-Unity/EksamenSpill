@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 1541350797634247968}
   - component: {fileID: 1413212475805279581}
   - component: {fileID: 7819492538543208693}
+  - component: {fileID: 4249301034764725202}
   m_Layer: 6
   m_Name: PlayerOne
   m_TagString: Player
@@ -342,6 +343,8 @@ MonoBehaviour:
   health: 10
   moveSpeed: 10
   healthText: {fileID: 0}
+  animator: {fileID: 4249301034764725202}
+  animationTimer: 10
   body: {fileID: 1413212475805279581}
   weaponManager: {fileID: 4322816694343023006}
 --- !u!50 &1413212475805279581
@@ -441,3 +444,25 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerOne
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &4249301034764725202
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9184120205309942246}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86aa02cfa8c6a614ea3dae2efb34cea4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
