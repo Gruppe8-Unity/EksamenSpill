@@ -48,5 +48,5 @@ MonoBehaviour:
   islandTile: {fileID: 11400000, guid: 5c64d6464ff95af4ab4f9cf9ea816cde, type: 2}
   minSize: 2
   maxSize: 7
-  spawnInterval: 0.75
+  spawnInterval: 0.5
   scrollSpeed: 5
