@@ -22,7 +22,7 @@ public class UIScript : MonoBehaviour
 
     public void UpdateHealth(float health)
     {
-        healthText.text = "P2: " + Mathf.Max(0, health);
+        healthText.text = "P1: " + Mathf.Max(0, health);
     }
 
     public void UpdateScore(int amount)

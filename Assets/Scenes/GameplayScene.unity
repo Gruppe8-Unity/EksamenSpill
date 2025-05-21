@@ -350,6 +350,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688631663}
   m_CullTransparentMesh: 1
+--- !u!1839735485 &1079745918 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 8014600390491807973, guid: cc51aaa88e536074b8a923478fde4278, type: 3}
+  m_PrefabInstance: {fileID: 36428639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1187896710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -664,9 +669,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1152958729821392195, guid: 2ec9373f7f5719b40a41e985c2b4ade0, type: 3}
+      propertyPath: oceanTilemap
+      value: 
+      objectReference: {fileID: 1079745918}
+    - target: {fileID: 1152958729821392195, guid: 2ec9373f7f5719b40a41e985c2b4ade0, type: 3}
       propertyPath: islandTilemap
       value: 
       objectReference: {fileID: 1325013773}
+    - target: {fileID: 1152958729821392195, guid: 2ec9373f7f5719b40a41e985c2b4ade0, type: 3}
+      propertyPath: timeToChangeLevel
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3003025182087892413, guid: 2ec9373f7f5719b40a41e985c2b4ade0, type: 3}
       propertyPath: m_Name
       value: IslandSpawner

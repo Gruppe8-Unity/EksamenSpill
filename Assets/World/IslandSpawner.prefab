@@ -51,7 +51,7 @@ MonoBehaviour:
   maxSize: 7
   spawnInterval: 0.5
   scrollSpeed: 5
-  timeToChangeLevel: 15
+  timeToChangeLevel: 2
   levels:
   - islandTile: {fileID: 11400000, guid: 5c64d6464ff95af4ab4f9cf9ea816cde, type: 2}
     oceanTile: {fileID: 11400000, guid: 390f52e29c754154baa36201a4eeeeda, type: 2}

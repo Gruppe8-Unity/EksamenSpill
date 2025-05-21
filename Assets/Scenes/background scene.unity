@@ -203,9 +203,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1839735485 &884740449 stripped
+--- !u!1839735485 &810884826 stripped
 Tilemap:
-  m_CorrespondingSourceObject: {fileID: 3541716758798141531, guid: cc51aaa88e536074b8a923478fde4278, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8014600390491807973, guid: cc51aaa88e536074b8a923478fde4278, type: 3}
   m_PrefabInstance: {fileID: 5254313322437489206}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1203375063
@@ -359,21 +359,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1152958729821392195, guid: 2ec9373f7f5719b40a41e985c2b4ade0, type: 3}
-      propertyPath: minSize
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1152958729821392195, guid: 2ec9373f7f5719b40a41e985c2b4ade0, type: 3}
       propertyPath: oceanTilemap
       value: 
-      objectReference: {fileID: 884740449}
+      objectReference: {fileID: 810884826}
     - target: {fileID: 1152958729821392195, guid: 2ec9373f7f5719b40a41e985c2b4ade0, type: 3}
       propertyPath: islandTilemap
       value: 
       objectReference: {fileID: 1403734058}
-    - target: {fileID: 1152958729821392195, guid: 2ec9373f7f5719b40a41e985c2b4ade0, type: 3}
-      propertyPath: timeToChangeLevel
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3003025182087892413, guid: 2ec9373f7f5719b40a41e985c2b4ade0, type: 3}
       propertyPath: m_Name
       value: IslandSpawner
