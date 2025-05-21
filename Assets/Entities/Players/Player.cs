@@ -45,4 +45,12 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void RestrictPosition(Rigidbody2D body)
+    {
+        Vector2 pos = body.position;
+        pos.x = Mathf.Clamp(pos.x, 0, Screen.width);
+        pos.y = Mathf.Clamp(pos.y, 0, Screen.height);
+        body.MovePosition(pos);   
+    }
 }

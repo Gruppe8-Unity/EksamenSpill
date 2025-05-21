@@ -12,6 +12,7 @@ public class PlayerOne : Player
     void FixedUpdate()
     {
         body.linearVelocity = moveDirection * moveSpeed;
+        RestrictPosition(body);
     }
 
     public void Move(InputAction.CallbackContext context)
