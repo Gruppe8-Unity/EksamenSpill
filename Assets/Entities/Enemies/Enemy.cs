@@ -35,10 +35,12 @@ public abstract class Enemy : MonoBehaviour
                 if (bullet != null)
                 {
                     TakeDamage(bullet.damage);
+                    Destroy(collision.gameObject);
+                    
                     if (UIScript.Instance != null)
-                    {
-                        UIScript.Instance.UpdateScore(100);
-                    }
+                {
+                    UIScript.Instance.UpdateScore(100);
+                }
                     Debug.Log("Health left: " + health);
                 }
             }
