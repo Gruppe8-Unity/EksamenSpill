@@ -44,10 +44,23 @@ public class IslandSpawner : MonoBehaviour
     void Start()
     {
         mainCam = Camera.main;
+        //Musikk starter på nivå 1
+        if (levels.Count > 0)
+        {
+            var theme = levels[0]; 
+            islandTile = theme.islandTile;
+
+            if (musicSource != null && theme.music != null)
+            {
+                musicSource.clip = theme.music;
+                musicSource.loop = true;
+                musicSource.Play();
+            }
+        }
 
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         timer += Time.deltaTime;
@@ -174,7 +187,7 @@ public class IslandSpawner : MonoBehaviour
         }
 
     currentLevel++;
-}
+    }
 
 
 }
