@@ -10,7 +10,10 @@ public class EnemyBoss : Enemy
 
     private float timer;
     private bool movingRight;
-
+    //Lyd
+    public AudioSource sfxSource;
+    public AudioClip fireSound;
+   
     void Start()
     {
         crossfire.rotation = Quaternion.Euler(0f, 0f, 180f);
@@ -47,5 +50,16 @@ public class EnemyBoss : Enemy
     void Fire()
     {
         GameObject bullet = Instantiate(bulletPrefab, crossfire.position, crossfire.rotation);
+        Bullet bulletComponent = bullet.GetComponent<Bullet>();
+
+        if (bulletComponent != null)
+        {
+            bulletComponent.ownerTag = "Enemy";
+        }
+        //Lyd
+        if (sfxSource != null && fireSound != null)
+        {
+            sfxSource.PlayOneShot(fireSound, 0.5f); //senke pistol
+        }
     }
 }

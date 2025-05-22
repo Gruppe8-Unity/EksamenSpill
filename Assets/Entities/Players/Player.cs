@@ -1,56 +1,129 @@
+using System;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     const float CREDIT = 10f;
 
+    public String playerName;
     public float health = 0f;
     public float moveSpeed = 0f;
+    public TMP_Text healthText;
+    public Animator animator;
+    public float animationTimer;
+
+    private float screenWidth;
+    private float screenHeight;
+    private float timer;
+    public AudioClip hitSound;
 
     void Awake()
     {
         health = CREDIT;
+        float verticalSize = Camera.main.orthographicSize * 2f;
+        screenHeight = verticalSize;
+        screenWidth = verticalSize * Camera.main.aspect;
     }
 
-    void Start()
+    void Update()
     {
-        UIScript.Instance.UpdateHealth(health);
+        timer -= Time.deltaTime;
+
+        if (timer < 0)
+        {
+            timer = animationTimer;
+            animator.SetTrigger("PlayAnim");
+        }
+
+
+        WrapPlayerAroundScreen();
+
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
+
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Bullet bullet = collision.GetComponent<Bullet>();
+            if (bullet != null && bullet.ownerTag == "Player")
+            {
+                return;
+            }
+
+            TakeDamage();
+            Destroy(collision.gameObject);
+            Debug.Log("PLAYER HEALTH: " + health);
+            return;
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             TakeDamage();
+            Destroy(collision.gameObject);
             Debug.Log("PLAYER HEALTH: " + health);
+        }
 
-            if (collision.gameObject.CompareTag("Bullet"))
-            {
-                Destroy(collision.gameObject);
-            }
-
-            if (collision.gameObject.CompareTag("Enemy"))
-            {
-                Destroy(collision.gameObject);
-            }
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            TakeDamage();
         }
     }
 
     public void TakeDamage()
     {
+        //Lyd
+        GameObject sfxPlayer = GameObject.Find("SFXPlayer");
+        if (sfxPlayer != null && hitSound != null)
+        {
+            AudioSource sfx = sfxPlayer.GetComponent<AudioSource>();
+            if (sfx != null)
+            
+                sfx.PlayOneShot(hitSound, 0.3f);
+            }
+
         health -= 1;
-        UIScript.Instance.UpdateHealth(health);
+        if (healthText != null)
+        {
+            healthText.text = playerName + health;
+        }
+
         if (health <= 0)
         {
             Destroy(gameObject);
         }
     }
 
-    public void RestrictPosition(Rigidbody2D body)
+    public float GetHealth()
     {
-        Vector2 pos = body.position;
-        pos.x = Mathf.Clamp(pos.x, -10f, 10f);
-        pos.y = Mathf.Clamp(pos.y, -5f, 5f);
-        body.MovePosition(pos);   
+        return health;
+    }
+
+    public void WrapPlayerAroundScreen()
+    {
+        Vector3 position = transform.position;
+
+        float halfWidth = screenWidth / 2f;
+        float halfHeight = screenHeight / 2f;
+
+        if (position.x <= -halfWidth)
+            position.x = halfWidth;
+        else if (position.x >= halfWidth)
+            position.x = -halfWidth;
+
+        if (position.y <= -halfHeight)
+            position.y = halfHeight;
+        else if (position.y >= halfHeight)
+            position.y = -halfHeight;
+
+        transform.position = position;
+
     }
 }

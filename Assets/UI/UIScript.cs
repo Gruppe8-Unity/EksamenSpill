@@ -6,9 +6,7 @@ public class UIScript : MonoBehaviour
 {
     public static UIScript Instance;
 
-    public TMP_Text healthText;
     public TMP_Text scoreText;
-    public TMP_Text levelText;
 
     int score = 0;
 
@@ -20,14 +18,19 @@ public class UIScript : MonoBehaviour
         }
     }
 
-    public void UpdateHealth(float health)
+    public void UpdateHealth(TMP_Text player, float health)
     {
-        healthText.text = "P2: " + Mathf.Max(0, health);
+        player.text = "P1: " + Mathf.Max(0, health);
     }
 
     public void UpdateScore(int amount)
     {
         score += amount;
         scoreText.text = "SCORE: " + score;
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 }

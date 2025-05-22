@@ -9,10 +9,16 @@ public class PlayerOne : Player
 
     Vector2 moveDirection = Vector2.zero;
 
+    void Start()
+    {
+        if (healthText != null)
+        {
+            healthText.text = "P1: " + health;
+        }
+    }
+
     void FixedUpdate()
     {
-        RestrictPosition(body);
-
         body.linearVelocity = moveDirection * moveSpeed;
     }
 

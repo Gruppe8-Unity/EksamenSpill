@@ -1,16 +1,79 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Player playerOne;
+    public Player playerTwo;
+    public UIScript uiScript;
+    public PlayerWeaponManager playerOneWeapon;
+    public PlayerWeaponManager playerTwoWeapon;
+    public EnemySpawnerScript enemySpawner;
+    public GameObject gameOverScreen;
+
+    public int[] upgradeLimits;
+
+    private int currentUpgrade = 0;
+    private int levelGap = 5000;
+    private bool isGameOver = false;
+    private bool newLevel = false;
+
+    private float victoryScore = 50000;
+
+    //musikk for game over
+    public AudioSource sfxSource;
+    public AudioClip gameOverSound;
+
+
+    private void Update()
     {
-        
+        int score = uiScript.GetScore();
+
+        if (!isGameOver && (playerOne.health <= 0 && playerTwo.health <= 0))
+        {
+            GameOverEnable();
+        }
+
+        if (currentUpgrade < upgradeLimits.Length && score >= upgradeLimits[currentUpgrade])
+        {
+            playerOneWeapon.UpgradeWeapon();
+            playerTwoWeapon.UpgradeWeapon();
+            currentUpgrade++;
+        }
+
+        if (score > levelGap && !newLevel)
+        {
+            enemySpawner.cooldown = Mathf.Max(0.1f, enemySpawner.cooldown - 0.75f);
+            enemySpawner.bossSpawnerTimer = Mathf.Max(2f, enemySpawner.bossSpawnerTimer - 9f);
+            newLevel = true;
+        }
+
+        if (score >= victoryScore)
+        {
+            SceneManager.LoadScene("VictoryScene");
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void GameOverEnable()
     {
-        
+        gameOverScreen.SetActive(true);
+        isGameOver = true;
+        Time.timeScale = 0f;
+        if (sfxSource != null && gameOverSound != null) //Game over lyd
+        {
+            sfxSource.PlayOneShot(gameOverSound);
+        }
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 }

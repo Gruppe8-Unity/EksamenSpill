@@ -3,15 +3,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string nextSceneName;
+    public GameObject tutorialScene;
+
+    public void EnterTutorial()
+    {
+        tutorialScene.SetActive(true);
+    }
 
     public void StartGame()
     {
-        SceneManager.LoadScene(nextSceneName);
+        SceneManager.LoadScene("GameplayScene");
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ReturnToMenu()
+    {
+        tutorialScene.SetActive(false);
     }
 }
