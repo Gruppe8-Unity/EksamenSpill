@@ -281,14 +281,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7819492538543208693, guid: 0425407b0c7835f43952459d1d5e03ee, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: df70fa95-8a34-4494-b137-73ab6b9c7d37
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819492538543208693, guid: 0425407b0c7835f43952459d1d5e03ee, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Keyboard&Mouse
-      objectReference: {fileID: 0}
     - target: {fileID: 9184120205309942246, guid: 0425407b0c7835f43952459d1d5e03ee, type: 3}
       propertyPath: m_Name
       value: PlayerOne
@@ -312,11 +304,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3213107257990138942, guid: ad5d1b7c4178fbf4aa471aefbbf2b28a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: 3213107257990138942, guid: ad5d1b7c4178fbf4aa471aefbbf2b28a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.61
       objectReference: {fileID: 0}
     - target: {fileID: 3213107257990138942, guid: ad5d1b7c4178fbf4aa471aefbbf2b28a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -349,10 +341,6 @@ PrefabInstance:
     - target: {fileID: 3213107257990138942, guid: ad5d1b7c4178fbf4aa471aefbbf2b28a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7561150212943408280, guid: ad5d1b7c4178fbf4aa471aefbbf2b28a, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Keyboard&Mouse
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

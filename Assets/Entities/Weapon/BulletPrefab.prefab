@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6606568652493309797}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4383413, y: 1.1889343, z: -0.050717566}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -138,5 +138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2078ea76a05e34784d6b932dbb136f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect:
+  - {fileID: 3392942416169838118, guid: 01bbef177403d2f4497b1d3e2d378eb5, type: 3}
+  - {fileID: 3392942416169838118, guid: a5e7c00d1a9376047a5a376caccdfbe9, type: 3}
+  - {fileID: 3392942416169838118, guid: 3365d088f086cf645973647b82948a7c, type: 3}
+  ownerTag: 
   speed: 15
   damage: 2
