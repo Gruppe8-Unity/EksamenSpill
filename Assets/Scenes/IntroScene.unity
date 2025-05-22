@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GRUPPE 8 INTRODUSERER
+  m_text: GRUPPE 21 INTRODUSERER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ad0ef8dedd939049a01c3979cd1fae7, type: 2}
   m_sharedMaterial: {fileID: 7347348667922460204, guid: 1ad0ef8dedd939049a01c3979cd1fae7, type: 2}
