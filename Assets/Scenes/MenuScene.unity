@@ -484,6 +484,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IntroPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 6206335288099010564, guid: cb55b2529a5f580489ae085fcd3acdfb, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8002220591793028038, guid: cb55b2529a5f580489ae085fcd3acdfb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.6189134

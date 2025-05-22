@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
             AudioSource sfx = sfxPlayer.GetComponent<AudioSource>();
             if (sfx != null)
             
-                sfx.PlayOneShot(hitSound);
+                sfx.PlayOneShot(hitSound, 0.3f);
             }
 
         health -= 1;

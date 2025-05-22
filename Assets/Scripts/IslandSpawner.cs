@@ -26,6 +26,7 @@ public class IslandSpawner : MonoBehaviour
         public RuleTile islandTile;
         public TileBase oceanTile;
         public AudioClip music;
+        [Range(0f, 1f)] public float volume = 1f; //For å justere lydnivå på forskjellige nivåer
     }
     public List<LevelTheme> levels = new List<LevelTheme>();
     private int currentLevel = 0;
@@ -54,6 +55,7 @@ public class IslandSpawner : MonoBehaviour
             {
                 musicSource.clip = theme.music;
                 musicSource.loop = true;
+                musicSource.volume = theme.volume;
                 musicSource.Play();
             }
         }
@@ -151,6 +153,7 @@ public class IslandSpawner : MonoBehaviour
             musicSource.Stop();
             musicSource.clip = theme.music;
             musicSource.loop = true;
+            musicSource.volume = theme.volume;
             musicSource.Play();
         }
         Debug.Log($"Endrer til nivå:{currentLevel + 1}");

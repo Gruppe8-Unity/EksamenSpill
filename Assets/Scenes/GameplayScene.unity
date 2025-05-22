@@ -1066,6 +1066,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 324011572408075531, guid: d367d72e0e6f1904ab7d37986db82bb5, type: 3}
+      propertyPath: m_Volume
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 3154877294119433201, guid: d367d72e0e6f1904ab7d37986db82bb5, type: 3}
       propertyPath: m_Name
       value: MusicPlayer
