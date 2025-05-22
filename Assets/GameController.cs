@@ -18,6 +18,8 @@ public class GameController : MonoBehaviour
     private bool isGameOver = false;
     private bool newLevel = false;
 
+    private float victoryScore = 50000;
+
     //musikk for game over
     public AudioSource sfxSource;
     public AudioClip gameOverSound;
@@ -44,6 +46,11 @@ public class GameController : MonoBehaviour
             enemySpawner.cooldown = Mathf.Max(0.1f, enemySpawner.cooldown - 0.75f);
             enemySpawner.bossSpawnerTimer = Mathf.Max(2f, enemySpawner.bossSpawnerTimer - 9f);
             newLevel = true;
+        }
+
+        if (score >= victoryScore)
+        {
+            SceneManager.LoadScene("VictoryScene");
         }
 
     }
